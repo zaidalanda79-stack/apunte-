@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apunte</title>
+    <style>
+        nav {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        button {
+            margin: 3px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            font-size: 20px;
+            padding: 5px;
+        }
+
+        button:hover {
+            background-color: beige;
+            color: blueviolet;
+        }
+
+        body {
+            background-color: beige;
+        }
+
+        img {
+            border-radius: 20px;
+            margin: 30px;
+        }
+
+        #git,
+        #github {
+            display: none;
+        }
+
+        #inicio {
+            display: flex;
+            justify-content: center;
+        }
+
+        table,
+        td,
+        th {
+            border: 1px solid black;
+            padding: 8px;
+            border-collapse: collapse;
+            margin: 0 auto;
+        }
+
+        table td:first-child {
+            background-color: rgb(226, 182, 212);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <button id="btn_inicio">Inicio</button>
+            <button id="btn_git">Git</button>
+            <button id="btn_github">GitHub</button>
+        </nav>
+    </header>
+
+    <section id="inicio">
+        <img src="https://liora.io/app/uploads/sites/9/2024/04/git.jpg" alt="Logo de Git" width="350">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEf9e96XPmDemRTuOlbQzjA4DH7jYaA_aEdA&s"
+            alt="Logo de GitHub" width="350">
+    </section>
+
+    <section id="git">
+        <h1>Git</h1>
+        <p>Git es un <strong>sistema de control de versiones</strong> distribuidas.
+            Su función principal es rastrear todos los cambios realizados en el código
+            de un proyecto a lo largo del tiempo, permitiendo guardar el historial, volver
+            a versiones anteriores y trabajar en equipo de manera ordenada.</p>
+        <h2>¿Para qué sirve?</h2>
+        <ul>
+            <li><strong>Máquina del tiempo:</strong> Permite "volver al pasado" y restaurar el
+                código si una nueva función rompe el programa o si comete un error, evitando tener
+                carpetas duplicadas con nombres como proyecto_final_v2.zip.</li>
+            <li><strong>Trabajo en equipo:</strong> Facilita que varias personas trabajen en
+                el mismo proyecto simultáneamente sin sobrescribir el trabajo de los demás.</li>
+            <li>Ramas (Branches): Permite crear copias paralelas del código para probar nuevas
+                ideas o funciones de forma segura sin modificar la versión principal.</li>
+        </ul>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>comandos</th>
+                    <th>descripcion</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>git init</td>
+                    <td>sirve para inicializar el git, creando una carpeta oculta llamada .git</td>
+                </tr>
+                <tr>
+                    <td>git config user.name <br>
+                        git config user.email
+                    </td>
+                    <td>Es para visualizar el nombre actual que esta configurado. <br>
+                        Es para visualizar el email que actualmente esta configurado.</td>
+                </tr>
+                <tr>
+                    <td>git init</td>
+                    <td>sirve para inicializar el git, creando una carpeta oculta llamada .git</td>
+                </tr>
+                <tr>
+                    <td>git add .</td>
+                    <td>sirve para pasar los archivos a zonas de preparacion o seleccionarlo.
+                     El punto nos Permite seleccionar todos los archivos.</td>
+            
+            </tbody>
+        </table>
+    </section>
+
+    <section id="github">
+        <h1>GitHub</h1>
+        <p>GitHub es una <strong>plataforma en la nube</strong> que funciona como un "Google Drive" para
+            programadores.
+            Aloja proyectos de software y utiliza el sistema de control de versiones Git, permitiendo a los
+            desarrolladores guardar su código, colaborar de forma remota y llevar un registro de cada cambio realizado.</p>
+        <h2>¿Para qué sirve?</h2>
+        <ul>
+            <li>Control de versiones: Permite guardar el historial de un proyecto y volver a cualquier
+                versión anterior si algo sale mal (como una máquina del tiempo).</li>
+            <li>Trabajo en equipo: Facilita que múltiples personas modifiquen el mismo código al mismo
+                tiempo sin sobrescribir el trabajo de los demás.</li>
+        </ul>
+    </section>
+
+    <script>
+        /* capturar los botones */
+        const botoninicio = document.getElementById("btn_inicio");
+        const botongit = document.getElementById("btn_git");
+        const botongithub = document.getElementById("btn_github");
+
+        /* capturar las secciones */
+        const seccioninicio = document.getElementById("inicio");
+        const secciongit = document.getElementById("git");
+        const secciongithub = document.getElementById("github");
+
+        /* escuchar los botones */
+        botoninicio.addEventListener("click", function () {
+            seccioninicio.style.display = "flex";
+            secciongit.style.display = "none";
+            secciongithub.style.display = "none";
+        });
+
+        botongit.addEventListener("click", function () {
+            seccioninicio.style.display = "none";
+            secciongit.style.display = "block";
+            secciongithub.style.display = "none";
+        });
+
+        botongithub.addEventListener("click", function () {
+            seccioninicio.style.display = "none";
+            secciongit.style.display = "none";
+            secciongithub.style.display = "block";
+        });
+    </script>
+</body>
+
+</html>
